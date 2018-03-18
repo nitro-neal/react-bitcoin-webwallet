@@ -1,0 +1,165 @@
+.SingleTransaction,
+.SingleTransaction * {
+    transition: all 300ms ease-in-out;
+}
+
+.SingleTransaction {
+    background-color: rgba(255, 255, 255, .02);
+    cursor: pointer;
+    margin-bottom: 2px;
+    border-radius: 20px;
+}
+
+.SingleTransaction.open {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .5);
+    background-color: rgba(255, 255, 255, .05);
+}
+
+@media screen and (min-width: 800px){
+    .SingleTransaction:hover {
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, .5);
+        background-color: rgba(255, 255, 255, .05);
+    }
+}
+
+.transactionHead {
+    padding: 25px 40px 25px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.SingleTransaction .method {
+    font-size: 22px;
+}
+
+.SingleTransaction .amount {
+    font-size: 20px;
+}
+
+.SingleTransaction .method img {
+    margin-right: 10px;
+}
+
+.SingleTransaction .amount img {
+    margin-left: 10px;
+}
+
+.SingleTransaction.open .amount img {
+    transform: rotate(-180deg);
+}
+
+.SingleTransaction .transactionDetails,
+.SingleTransaction .transactionDetails .detailWrap {
+    display: flex;
+}
+
+.SingleTransaction .transactionDetails {
+    text-align: left;
+    padding: 0px;
+    height: 0px;
+    overflow: hidden;
+    transform-origin: top;
+}
+
+.SingleTransaction.open .transactionDetails {
+    padding: 0px 40px 20px;
+    height: 117px;
+}
+
+.SingleTransaction .transactionDetails .detailWrap {
+    padding-bottom: 20px;
+}
+
+.SingleTransaction .transactionDetails .detailWrap .leftLine {
+    width: 1px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, .08);
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.SingleTransaction .transactionDetails .detailWrap .detailTitle {
+    font-size: 16px;
+    opacity: .5;
+}
+
+.SingleTransaction .transactionDetails .detailWrap .detailValue {
+    font-size: 18px;
+}
+
+.SingleTransaction .transactionDetails .detailWrap .detailValue.date  {
+    font-size: 17px;
+}
+
+.SingleTransaction .column {
+    margin-right: 40px; 
+}
+
+
+@media screen and (max-width: 800px) {
+    .SingleTransaction {
+        margin: 0px 10px 2px;
+        border-radius: 10px;
+    }
+
+    .SingleTransaction.open {
+        margin: 0px 0px 2px;
+    }
+
+    .transactionHead {
+        padding: 15px 10px;
+    }
+
+    .SingleTransaction.open .transactionHead {
+        padding: 15px 20px;
+    }
+
+    .SingleTransaction .method,
+    .SingleTransaction .amount {
+        font-size: 16px;
+    }
+
+    .SingleTransaction.open .amount img {
+        transform: rotate(-180deg) translate(-5px, 6px);
+    }
+
+
+    .SingleTransaction .transactionDetails {
+        text-align: left;
+        padding: 0px;
+        height: 0px;
+        overflow: hidden;
+        transform-origin: top;
+        flex-direction: column;
+    }
+
+    .SingleTransaction.open .transactionDetails {
+        padding: 0px 20px 10px;
+        height: 126px;
+    }
+    
+    .SingleTransaction .transactionDetails .detailWrap {
+        padding-bottom: 10px;
+    }
+    
+    .SingleTransaction .transactionDetails .detailWrap .leftLine {
+        height: 27px;
+        margin-right: 5px;
+    }
+    
+    .SingleTransaction .transactionDetails .detailWrap .detailTitle {
+        font-size: 12px;
+    }
+    
+    .SingleTransaction .transactionDetails .detailWrap .detailValue {
+        font-size: 14px;
+    }
+   
+    .SingleTransaction .transactionDetails .detailWrap .detailValue.date {
+        font-size: 13px;
+    }
+    
+    .SingleTransaction .column {
+        margin-right: 0px; 
+    }
+}
