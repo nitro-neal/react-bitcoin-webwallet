@@ -1,5 +1,5 @@
 import React from 'react'
-import { SubTitle, CloseButton } from '../../Atoms'
+import { SubTitle, CloseButton, Button } from '../../Atoms'
 import './SendView.css'
 
 const SendView = props => (
@@ -7,8 +7,21 @@ const SendView = props => (
         <CloseButton {...props} />
         <SubTitle>
             SEND
-        </SubTitle>
+            </SubTitle>
+        <Button
+            style={{
+                display: 'block',
+                margin: '50px auto 0px'
+            }}
+            onClick={() => {
+                props.pushTransaction({ method: 'sent' })
+                props.setPopup(null)
+            }}
+        >
+            SEND
+        </Button>
     </div>
 )
+
 
 export default SendView

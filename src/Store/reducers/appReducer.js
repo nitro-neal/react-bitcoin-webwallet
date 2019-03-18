@@ -1,12 +1,5 @@
-const fakeTransactions = [
-    { method: 'received'},
-    { method: 'sent'},
-    { method: 'received'},
-    { method: 'received'},
-]
-
 const initialState = {
-    transactions: fakeTransactions,
+    transactions: [],
     popupView: null
 }
 

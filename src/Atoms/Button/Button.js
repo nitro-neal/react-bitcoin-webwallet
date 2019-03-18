@@ -12,7 +12,7 @@ const Button = props => (
     <button
         className='Button'
         {...props}
-        style={style}
+        style={{ ...style, ...props.style }}
     >
         {props.children}
     </button>

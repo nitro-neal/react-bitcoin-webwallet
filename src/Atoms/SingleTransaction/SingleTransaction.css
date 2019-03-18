@@ -68,6 +68,7 @@
 
 .SingleTransaction .transactionDetails .detailWrap {
     padding-bottom: 20px;
+    align-items: center;
 }
 
 .SingleTransaction .transactionDetails .detailWrap .leftLine {
