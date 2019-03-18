@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
@@ -23,7 +24,7 @@ code {
   transition: all 150ms ease-in-out;
 }
 
-.AppView {
+.App {
   background-image: url(../../Assets/logo.svg);
   min-height: 100vh;
   width: 100vw;
@@ -32,18 +33,18 @@ code {
   background-size: 200px ;
 }
 
-.appWrap {
-  max-width: 960px;
-  margin: auto;
+
+@media screen and (min-width: 800px) {
+  .App.dark {
+      filter: blur(4px);
+      opacity: .2;
+      pointer-events: none;
+  }
 }
 
 @media screen and (max-width: 800px) {
-  .AppView {
+  .App {
     background-position: 10px 10px;
     background-size: 60px;
-  }
-
-  .appWrap {
-    max-width: unset;
   }
 }

@@ -1,0 +1,11 @@
+.CloseButton {
+    padding: 30px;
+    display: table;
+    margin-left: auto;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.CloseButton:hover {
+    opacity: .8;
+}

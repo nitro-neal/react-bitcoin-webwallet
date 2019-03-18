@@ -14,7 +14,7 @@ class SingleTransaction extends Component {
     }
 
     render() {
-
+        const { method } = this.props.transaction
         return (
             <div
                 className={`SingleTransaction ${this.state.open ? 'open' : ''}`}
@@ -23,19 +23,19 @@ class SingleTransaction extends Component {
                 <div className='transactionHead'>
                     <div className='method'>
                         <img
-                            src={this.props.method === 'sent' ? sent : received}
+                            src={method === 'sent' ? sent : received}
                             alt='' />
                         <span style={{
-                            color: this.props.method === 'sent' ? 'inherit' : colors.primaryColor
+                            color: method === 'sent' ? 'inherit' : colors.primaryColor
                         }}>
                             {
-                                this.props.method === 'sent' ? 'Sent' : 'Received'
+                                method === 'sent' ? 'Sent' : 'Received'
                             }
                         </span>
                     </div>
                     <div className='amount'>
                         <span style={{
-                            color: this.props.method === 'sent' ? 'inherit' : colors.primaryColor
+                            color: method === 'sent' ? 'inherit' : colors.primaryColor
                         }}>
                             {this.props.amount || '-25.00'}
                         </span>
@@ -64,7 +64,7 @@ class SingleTransaction extends Component {
                             <div className='leftLine'></div>
                             <div className='content'>
                                 <div className='detailTitle'>
-                                    {this.props.method === 'sent' ? 'To' : 'From'}
+                                    {method === 'sent' ? 'To' : 'From'}
                                 </div>
                                 <div className='detailValue' style={{
                                     color: window.innerWidth < 800 ? colors.primaryColor : ''

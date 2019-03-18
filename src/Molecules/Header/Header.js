@@ -18,8 +18,22 @@ const Header = props => (
             0 BTCT
         </div>
         <div className='buttonsWrap'>
-            <Button> Send </Button>
-            <Button> Receive </Button>
+            <Button
+                onClick={(e) => {
+                    e.stopPropagation()
+                    props.setPopup('send')
+                }}
+            >
+                Send
+             </Button>
+            <Button
+                onClick={(e) => {
+                    e.stopPropagation()
+                    props.setPopup('receive')
+                }}
+            >
+                Receive
+             </Button>
         </div>
     </header>
 )
