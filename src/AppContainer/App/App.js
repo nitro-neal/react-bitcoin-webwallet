@@ -1,6 +1,7 @@
 import React from 'react'
 import { MainView, Popup } from '../../Organisms'
 import { connect } from 'react-redux'
+import MovingSquers from '../MovingSquers/MovingSquers'
 import { colors } from '../../Styles'
 import './App.css'
 
@@ -12,14 +13,16 @@ const styles = {
 }
 
 const App = props => (
-  <div style={styles.App}>
-    <div
-      className={`App ${props.app.popupView ? 'dark' : ''}`}
-    >
-      <MainView {...props} />
+  <MovingSquers>
+    <div style={styles.App}>
+      <div
+        className={`App ${props.app.popupView ? 'dark' : ''}`}
+      >
+        <MainView {...props} />
+      </div>
+      <Popup {...props} />
     </div>
-    <Popup {...props} />
-  </div>
+  </MovingSquers>
 )
 
 function mapDispatchToProps(dispatch) {
