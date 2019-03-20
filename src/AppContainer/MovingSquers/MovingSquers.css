@@ -10,7 +10,7 @@
   .index-page .squares {
     -webkit-animation: move-left-right 1s infinite;
     animation: move-left-right 1s infinite;
-    background-color: #f5a623;
+    /* background-color: #f5a623; */
     background-image: url(./logo.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -28,17 +28,17 @@
             animation: move-left-right 4s infinite;
     height: 300px;
     width: 300px;
-    opacity: 0.5;
-    left: 3%;
-    top: -170px; }
+    opacity: 0.8;
+    left: 0px;
+    top: 0px; }
   .index-page .squares.square2 {
     -webkit-animation: move-left-right 6s infinite;
-            animation: move-left-right 6s infinite;
+    animation: move-left-right 6s infinite;
     height: 400px;
     width: 400px;
-    opacity: 0.4;
-    right: -5%;
-    top: -70px; }
+    opacity: 0.3;
+    right: -11%;
+    top: -120px; }
   .index-page .squares.square3 {
     -webkit-animation: move-left-right 5s infinite;
             animation: move-left-right 5s infinite;
@@ -61,17 +61,17 @@
     animation: move-left-right 6s infinite;
     height: 180px;
     width: 180px;
-    opacity: 0.1;
-    left: 32%;
-    top: 390px; }
+    opacity: 0.4;
+    left: 3%;
+    top: 550px;}
   .index-page .squares.square6 {
     -webkit-animation: move-left-right 9s infinite;
     animation: move-left-right 9s infinite;
-    left: 10%;
-    top: 282px;
+    left: 20%;
+    top: 332px;
     height: 100px;
     width: 100px;
-    opacity: 0.8; }
+    opacity: 0.05; }
   .index-page .squares.square7 {
     -webkit-animation: move-left-right 3s infinite;
     animation: move-left-right 3s infinite;
