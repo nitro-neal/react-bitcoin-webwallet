@@ -26,6 +26,9 @@
 }
 
 @media screen and (max-width: 800px) {
+    .SendView .content {
+        padding-top: 30px;
+    }
 
     .SendView .fieldsWrap {
         width: calc(100% - 40px);

@@ -32,7 +32,31 @@
 
 .TextField.focused .fieldName {
     transform: translate(-20px, -45px);
-    font-size: 25px;
+    font-size: 16px;
     opacity: 1;
-    font-size: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .TextField {
+        height: 20px;
+        margin-top: 20px;
+        position: relative;
+        padding: 15px 20px 15px 40px;   
+    }
+    
+    .TextField input {
+        font-size: 16px;
+        border-radius: 5px;
+        padding-left: 25px;
+        width: calc(100% - 25px);
+    }
+
+    .TextField .fieldName {
+        font-size: 18px;
+        transform: translate(-15px, 0px);
+    }
+
+    .TextField.focused .fieldName {
+        font-size: 18px;
+    }
 }

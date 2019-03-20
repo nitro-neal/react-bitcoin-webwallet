@@ -38,7 +38,7 @@ class Popup extends Component {
                 return <ReceiveView {...this.props} />
             case 'sent':
                 return <ProcessView {...this.props} />
-            case 'sent':
+            case 'confirmation':
                 return <ConfirmationView {...this.props} />
             case 'sent':
                 return <SuccessView {...this.props} />

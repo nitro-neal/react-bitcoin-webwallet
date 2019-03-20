@@ -1,3 +1,8 @@
 .ConfirmationView {
-    
+    text-align: center;
 }
+
+.ConfirmationView .titleHint {
+    font-size: 17px;
+}
+

@@ -18,15 +18,15 @@ const SendView = props => (
             <Button
                 style={{
                     display: 'block',
-                    margin: '50px auto 0px',
-                    height: 60,
-                    width: 300
+                    margin: 'auto auto 20px',
+                    height: window.innerWidth > 800 ? 60 : 50,
+                    width: window.innerWidth > 800 ? 300 : 280
                 }}
                 onClick={() => {
                     props.pushTransaction({ method: 'sent' })
                     props.setPopup(null)
                 }}
-                >
+            >
                 SEND
             </Button>
 
