@@ -31,7 +31,9 @@ function mapDispatchToProps(dispatch) {
     setPopup: popupView => dispatch({
       type: 'SET_POPUP',
       payload: popupView
-    })
+    }),
+    increaseSendAmount: () => dispatch({ type: 'INCREASE' }),
+    decreaseSendAmount: () => dispatch({ type: 'DECREASE' })
   }
 }
 

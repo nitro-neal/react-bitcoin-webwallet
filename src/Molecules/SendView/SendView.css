@@ -3,4 +3,32 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex-grow: 1;
+}
+
+.SendView .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10%;
+}
+
+.SendView .subTitleWrap {
+    margin-bottom: 25px;
+}
+
+.SendView .fieldsWrap {
+    width: 500px;
+    margin: 0px auto;
+    text-align: left;
+}
+
+@media screen and (max-width: 800px) {
+
+    .SendView .fieldsWrap {
+        width: calc(100% - 40px);
+    }
+    
 }

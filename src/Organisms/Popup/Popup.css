@@ -16,6 +16,9 @@
     background-repeat: no-repeat;
     background-position: 25px 25px;
     background-size: 80px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .Popup.visible {

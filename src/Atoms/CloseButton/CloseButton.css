@@ -9,3 +9,10 @@
 .CloseButton:hover {
     opacity: .8;
 }
+
+@media screen and (max-width: 800px) {
+    
+    .CloseButton {
+        padding: 20px
+    }
+}

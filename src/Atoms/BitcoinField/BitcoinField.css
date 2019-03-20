@@ -1,0 +1,64 @@
+.BitcoinField {
+    height: 30px;
+    margin-top: 20px;
+    position: relative;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, .05);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .BitcoinField input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: calc(100% - 130px);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding-left: 130px;
+    font-size: 25px;
+} */
+/* 
+.BitcoinField .fieldName {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+    font-size: 25px;
+    transform: translateX(5px);
+} */
+
+.BitcoinField .decrease,
+.BitcoinField .increase {
+    padding: 15px;
+    margin: -15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BitcoinField .decrease:hover,
+.BitcoinField .increase:hover {
+    transform: scale(1.075);
+}
+
+.BitcoinField .decrease:active,
+.BitcoinField .increase:active {
+    transform: scale(1);
+}
+
+.BitcoinField .textWrap {
+    display: flex;
+}
+
+.BitcoinField .amount,
+.BitcoinField .coin {
+    font-size: 25px;
+    padding: 0 7.5px;
+}

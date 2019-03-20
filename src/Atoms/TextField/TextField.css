@@ -1,0 +1,38 @@
+.TextField {
+    height: 30px;
+    margin-top: 20px;
+    position: relative;
+    padding: 15px 20px 15px 40px;
+}
+
+.TextField input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, .05);
+    color: rgba(255, 255, 255, .5);
+    font-size: 18px;
+    padding-left: 40px;
+    border-radius: 10px;
+}
+
+.TextField .fieldName {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+    font-size: 25px;
+    opacity: .5;
+}
+
+.TextField.focused .fieldName {
+    transform: translate(-20px, -45px);
+    font-size: 25px;
+    opacity: 1;
+    font-size: 20px;
+}

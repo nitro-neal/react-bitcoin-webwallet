@@ -1,36 +1,46 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { SingleTransaction } from '../../Atoms'
 import './Transactions.css'
 
-const Transactions = props => (
-    <div className='Transactions'>
+class Transactions extends Component {
+    state = {
+        className: ''
+    }
 
-        {
-            props.app.transactions.length ?
-                <div>
-                    <div className='transactionsDate'>
-                        Jan 22, 2018
+    componentDidMount() {
+        this.setState({ className: 'fadeIn' })
+    }
+
+    render() {
+        const { props } = this
+        return (
+            <div className={`Transactions ${this.state.className}`}>
+                {
+                    props.app.transactions.length ?
+                        <div>
+                            <div className='transactionsDate'>
+                                Jan 22, 2018
+                        </div>
+                            <div className='transactionsTable'>
+                                {
+                                    props.app.transactions.map((transaction, i) => (
+                                        <SingleTransaction
+                                            transaction={transaction}
+                                            key={i}
+                                        />
+                                    ))
+                                }
+                            </div>
+
+                        </div>
+                        :
+                        <div className='no-history'>
+                            No History Transactions
                     </div>
-                    <div className='transactionsTable'>
-                        {
-                            props.app.transactions.map((transaction, i) => (
-                                <SingleTransaction
-                                    transaction={transaction}
-                                    key={i}
-                                />
-                            ))
-                        }
-                    </div>
-
-                </div>
-                :
-                <div className='no-history'>
-                    No History Transactions
-                </div>
-        }
-
-
-    </div>
-)
+                }
+            </div>
+        )
+    }
+}
 
 export default Transactions
