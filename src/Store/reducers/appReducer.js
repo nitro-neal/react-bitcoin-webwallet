@@ -1,6 +1,6 @@
 const initialState = {
     transactions: [],
-    popupView: 'send'
+    popupView: ''
 }
 
 // REDUCER
