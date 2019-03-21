@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { MainView, Popup } from '../../Organisms'
+import { MainView, PopupView } from '../../Views'
 import { connect } from 'react-redux'
-import MovingLogos from '../MovingLogos/MovingLogos'
+import { MovingLogos } from './components'
 import { createFingerprint } from '../../Store/actions'
 import { colors } from '../../Styles'
 import './App.css'
@@ -28,7 +28,7 @@ class App extends Component {
           >
             <MainView {...props} />
           </div>
-          <Popup {...props} />
+          <PopupView {...props} />
         </div>
       </MovingLogos>
     )
