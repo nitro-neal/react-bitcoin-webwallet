@@ -16,7 +16,6 @@ class Header extends Component {
 
     componentDidMount() {
         this.setState({ className: 'fadeInDown' })
-        this.setState({ balanceAmount: '0' })
     }
     
     render() {
@@ -27,10 +26,7 @@ class Header extends Component {
                     Bitcoin Test
                 </div>
                 <div className='balance' style={styles.balance} >
-                    {this.state.balanceAmount} BTCT
-                    {/* {this.props.balanceAmount}
-                    {this.props.appReducer.balanceAmount}
-                    {this.props.send.balanceAmount} */}
+                    {props.app.balanceAmount} BTCT
                 </div>
                 <div className='buttonsWrap'>
                     <Button
