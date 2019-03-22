@@ -1,9 +1,9 @@
 const initialState = {
     address: '',
-    amount: 0.01
+    amount: 0.00001
 }
 
-const changeSize = 0.01
+const changeSize = 0.00001
 
 // REDUCER
 export default function (state = initialState, action) {
