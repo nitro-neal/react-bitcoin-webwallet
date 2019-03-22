@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { MainView, PopupView } from '../../Views'
 import { connect } from 'react-redux'
-import { MovingLogos } from './components'
+import { MovingSquares } from './components'
 import {
   createFingerprint,
   pushTransaction,
@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     const { props } = this
     return (
-      <MovingLogos>
+      <MovingSquares>
         <div style={styles.App}>
           <div
             className={`App ${props.app.popupView ? 'dark' : ''}`}
@@ -37,7 +37,7 @@ class App extends Component {
           </div>
           <PopupView {...props} />
         </div>
-      </MovingLogos>
+      </MovingSquares>
     )
   }
 }

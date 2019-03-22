@@ -1,6 +1,6 @@
 export default {
-    backgroundDark: '#151515',
-    backgroundDarkish: '#232323',
+    backgroundDark: '#171941', // '#151515',
+    backgroundDarkish: '#1f2251',//'#232323',
     textLight: '#fff',
-    primaryColor: '#F5A623'
+    primaryColor: '#e14eca',// '#ba54f5'
 }

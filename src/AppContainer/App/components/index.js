@@ -1,3 +1,3 @@
-import MovingLogos from './MovingLogos/MovingLogos'
+import MovingSquares from './MovingSquares/MovingSquares'
 
-export { MovingLogos }
+export { MovingSquares }

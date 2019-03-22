@@ -1,8 +1,8 @@
 import React from 'react'
-import './MovingLogos.css'
+import './MovingSquares.css'
 
-const MovingLogos = props => (
-    <div className='MovingLogos'>
+const MovingSquares = props => (
+    <div className='MovingSquares'>
         <div className="page-header header-filter">
             <div className="squares square1"></div>
             <div className="squares square2"></div>
@@ -16,4 +16,4 @@ const MovingLogos = props => (
     </div>
 )
 
-export default MovingLogos
+export default MovingSquares
