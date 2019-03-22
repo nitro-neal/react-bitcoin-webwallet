@@ -12,6 +12,11 @@ export default function (state = initialState, action) {
         case 'SET_POPUP':
             state.popupView = action.payload
             return { ...state }
+        case 'UPDATE_BALANCE':
+            console.log("IN UPDATE BALANCE.." + action.payload)
+            // state.balanceAmount = action.payload
+            // return { ...state }
+            return { ...state, balanceAmount: action.payload }
         default:
             return state
     }

@@ -37,7 +37,7 @@ class BitcoinField extends Component {
                 </div>
                 <div className='textWrap'>
                     <div className='amount'>
-                        {Math.round(this.props.send.amount * 100) / 100}
+                        {Math.round(this.props.send.amount * 10000) / 10000}
                     </div>
                     <div className='coin'>
                         BTCT

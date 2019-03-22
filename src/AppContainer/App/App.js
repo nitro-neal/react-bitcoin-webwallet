@@ -15,7 +15,7 @@ const styles = {
 
 class App extends Component {
   componentDidMount() {
-    createFingerprint()
+    createFingerprint(this)
   }
 
   render() {
@@ -44,6 +44,10 @@ function mapDispatchToProps(dispatch) {
     setPopup: popupView => dispatch({
       type: 'SET_POPUP',
       payload: popupView
+    }),
+    setBalanceAmount: amount => dispatch({
+      type: 'UPDATE_BALANCE',
+      payload: amount
     }),
     increaseSendAmount: () => dispatch({ type: 'INCREASE' }),
     decreaseSendAmount: () => dispatch({ type: 'DECREASE' })

@@ -3,11 +3,13 @@ import SockJS from 'sockjs-client'
 import Stomp from 'stompjs'
 
 var fp;
+var that;
 
 var urlprefix = "http://104.196.50.29:8080/";
 //var urlprefix = "http://localhost:8080/";
 
-export default function createFingerprint() {
+export default function createFingerprint(appContext) {
+    that = appContext;
     if (window.requestIdleCallback) {
         requestIdleCallback(function () {
             Fingerprint2.get(function (components) {
@@ -47,7 +49,7 @@ function register(registrations) {
 }
 
 function stompClientReady() {
-    alert('ready! lets init the wallet..')
+    //alert('ready! lets init the wallet..')
     initWallet(fp)
 }
 
@@ -68,14 +70,22 @@ function initWallet(fingerprint) {
 }
 
 function walletUpdate(payload) {
-    alert('wallet update called')
+    //alert('wallet update called')
     console.log("Payload:" + payload)
     var payloadJson = JSON.parse(payload.body)
 
     // TODO: Set state in wallet!
     console.log("!! Wallet State:");
     console.log("Receive Address" + payloadJson.receiveAddress + " balance " + payloadJson.balance + " transacitons: " + payloadJson.transactions)
+    // props.pushTransaction({ method: 'sent' })
+    //                 props.setPopup(null)
 
+    that.props.pushTransaction({ method: 'sent' })
+    that.props.setPopup(null)
+    that.props.setBalanceAmount(payloadJson.balance)
+    
+    //that.props.balance(payloadJson.balance)
+    //that.props.walletUpdate
     // TODO: Add qr code
     // qr.addData(payloadJson.receiveAddress);
     // qr.make();
