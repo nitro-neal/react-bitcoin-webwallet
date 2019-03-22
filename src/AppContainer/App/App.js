@@ -1,6 +1,8 @@
-import React from 'react'
-import { MainView, Popup } from '../../Organisms'
+import React, { Component } from 'react'
+import { MainView, PopupView } from '../../Views'
 import { connect } from 'react-redux'
+import { MovingLogos } from './components'
+import { createFingerprint } from '../../Store/actions'
 import { colors } from '../../Styles'
 import './App.css'
 
@@ -11,16 +13,27 @@ const styles = {
   }
 }
 
-const App = props => (
-  <div style={styles.App}>
-    <div
-      className={`App ${props.app.popupView ? 'dark' : ''}`}
-    >
-      <MainView {...props} />
-    </div>
-    <Popup {...props} />
-  </div>
-)
+class App extends Component {
+  componentDidMount() {
+    createFingerprint()
+  }
+
+  render() {
+    const { props } = this
+    return (
+      <MovingLogos>
+        <div style={styles.App}>
+          <div
+            className={`App ${props.app.popupView ? 'dark' : ''}`}
+          >
+            <MainView {...props} />
+          </div>
+          <PopupView {...props} />
+        </div>
+      </MovingLogos>
+    )
+  }
+}
 
 function mapDispatchToProps(dispatch) {
   return {

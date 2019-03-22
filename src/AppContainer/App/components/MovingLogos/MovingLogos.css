@@ -1,0 +1,153 @@
+
+.page-header {
+    min-height: 100vh;
+    padding: 0;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+  
+   .squares {
+    -webkit-animation: move-left-right 1s infinite;
+    animation: move-left-right 1s infinite;
+    /* background-color: #f5a623; */
+    background-image: url(./orange-logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    position: absolute;
+    -webkit-transition: 0.5s ease-out;
+    transition: 0.5s ease-out;
+    overflow: hidden;
+    border-radius: 20%;
+    pointer-events: none;
+  }
+  
+   .squares.square1 {
+    -webkit-animation: move-left-right 4s infinite;
+            animation: move-left-right 4s infinite;
+    height: 300px;
+    width: 300px;
+    opacity: 0.8;
+    left: 0px;
+    top: 0px; }
+   .squares.square2 {
+    -webkit-animation: move-left-right 6s infinite;
+    animation: move-left-right 6s infinite;
+    height: 400px;
+    width: 400px;
+    opacity: 0.3;
+    right: -11%;
+    top: -120px; }
+   .squares.square3 {
+    -webkit-animation: move-left-right 5s infinite;
+            animation: move-left-right 5s infinite;
+    height: 200px;
+    width: 200px;
+    opacity: 0.1;
+    left: -5%;
+    top: 760px; }
+   .squares.square4 {
+    -webkit-animation: move-left-right 10s infinite;
+            animation: move-left-right 10s infinite;
+    height: 70px;
+    width: 70px;
+    opacity: 0.9;
+    right: 27%;
+    top: 530px;
+}
+   .squares.square5 {
+    -webkit-animation: move-left-right 6s infinite;
+    animation: move-left-right 6s infinite;
+    height: 180px;
+    width: 180px;
+    opacity: 0.4;
+    left: 3%;
+    top: 550px;}
+   .squares.square6 {
+    -webkit-animation: move-left-right 9s infinite;
+    animation: move-left-right 9s infinite;
+    left: 20%;
+    top: 332px;
+    height: 100px;
+    width: 100px;
+    opacity: 0.05; }
+   .squares.square7 {
+    -webkit-animation: move-left-right 3s infinite;
+    animation: move-left-right 3s infinite;
+    width: 300px;
+    height: 300px;
+    right: -5%;
+    top: 610px;
+    opacity: 0.1; }
+  
+  
+    /* navbar color */
+  @-webkit-keyframes move-left-right {
+    0% {
+      -webkit-transform: translateX(-10px);
+              transform: translateX(-10px); }
+    50% {
+      -webkit-transform: translateX(10px);
+              transform: translateX(10px); }
+    100% {
+      -webkit-transform: translateX(-10px);
+              transform: translateX(-10px); } }
+  @keyframes move-left-right {
+    0% {
+      -webkit-transform: translateX(-10px);
+              transform: translateX(-10px); }
+    50% {
+      -webkit-transform: translateX(10px);
+              transform: translateX(10px); }
+    100% {
+      -webkit-transform: translateX(-10px);
+              transform: translateX(-10px); } }
+  
+
+              @media screen and (max-width: 800px) {
+                .squares.square1 {
+                  height: 80px;
+                  width: 80px;
+                }
+
+                .squares.square2{
+                  height: 120px;
+                  width: 120px;
+                  right: -20px;
+                  top: 50px;
+                  opacity: .15;
+                }
+
+                .squares.square3 {
+                  -webkit-animation: move-left-right 5s infinite;
+                  animation: move-left-right 5s infinite;
+                  height: 200px;
+                  width: 200px;
+                  opacity: 0.1;
+                  left: -70px;
+                  top: 330px;
+                }
+
+                .squares.square4,
+                .squares.square5{
+                  display: none;
+                }
+
+                .squares.square6 {
+                  -webkit-animation: move-left-right 9s infinite;
+                  animation: move-left-right 9s infinite;
+                  left: unset;
+                  top: 330px;
+                  height: 100px;
+                  width: 100px;
+                  opacity: 0.05;
+                  right: -15px;
+                }
+
+                .squares.square7 {
+                  top: 570px;
+                }
+              
+              }
+            
