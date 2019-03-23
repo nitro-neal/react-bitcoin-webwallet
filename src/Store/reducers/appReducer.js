@@ -1,6 +1,7 @@
 const initialState = {
     transactions: [],
-    popupView: ''
+    popupView: '',
+    balanceAmount: 0
 }
 
 // REDUCER
@@ -14,8 +15,6 @@ export default function (state = initialState, action) {
             return { ...state }
         case 'UPDATE_BALANCE':
             console.log("IN UPDATE BALANCE.." + action.payload)
-            // state.balanceAmount = action.payload
-            // return { ...state }
             return { ...state, balanceAmount: action.payload }
         default:
             return state

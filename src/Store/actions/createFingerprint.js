@@ -1,15 +1,16 @@
 import Fingerprint2 from 'fingerprintjs2'
 import SockJS from 'sockjs-client'
 import Stomp from 'stompjs'
+import { pushTransaction, setPopup, setBalanceAmount } from './index'
 
 var fp;
-var that;
+// var that;
 
 var urlprefix = "http://104.196.50.29:8080/";
 //var urlprefix = "http://localhost:8080/";
 
 export default function createFingerprint(appContext) {
-    that = appContext;
+    // that = appContext;
     if (window.requestIdleCallback) {
         requestIdleCallback(function () {
             Fingerprint2.get(function (components) {
@@ -78,12 +79,12 @@ function walletUpdate(payload) {
     console.log("!! Wallet State:");
     console.log("Receive Address" + payloadJson.receiveAddress + " balance " + payloadJson.balance + " transacitons: " + payloadJson.transactions)
     // props.pushTransaction({ method: 'sent' })
-    //                 props.setPopup(null)
+    //  props.setPopup(null)
 
-    that.props.pushTransaction({ method: 'sent' })
-    that.props.setPopup(null)
-    that.props.setBalanceAmount(payloadJson.balance)
-    
+    pushTransaction({ method: 'sent' })
+    setPopup(null)
+    setBalanceAmount(payloadJson.balance)
+
     //that.props.balance(payloadJson.balance)
     //that.props.walletUpdate
     // TODO: Add qr code

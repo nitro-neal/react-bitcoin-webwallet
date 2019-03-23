@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 import { MainView, PopupView } from '../../Views'
 import { connect } from 'react-redux'
-import { MovingLogos } from './components'
-import { createFingerprint } from '../../Store/actions'
+import { MovingSquares } from './components'
+import {
+  createFingerprint,
+  pushTransaction,
+  setPopup,
+  setBalanceAmount,
+  increaseSendAmount,
+  decreaseSendAmount
+} from '../../Store/actions'
 import { colors } from '../../Styles'
 import './App.css'
 
@@ -21,7 +28,7 @@ class App extends Component {
   render() {
     const { props } = this
     return (
-      <MovingLogos>
+      <MovingSquares>
         <div style={styles.App}>
           <div
             className={`App ${props.app.popupView ? 'dark' : ''}`}
@@ -30,27 +37,18 @@ class App extends Component {
           </div>
           <PopupView {...props} />
         </div>
-      </MovingLogos>
+      </MovingSquares>
     )
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps() {
   return {
-    pushTransaction: transaction => dispatch({
-      type: 'PUSH_TRANSACTION',
-      payload: transaction
-    }),
-    setPopup: popupView => dispatch({
-      type: 'SET_POPUP',
-      payload: popupView
-    }),
-    setBalanceAmount: amount => dispatch({
-      type: 'UPDATE_BALANCE',
-      payload: amount
-    }),
-    increaseSendAmount: () => dispatch({ type: 'INCREASE' }),
-    decreaseSendAmount: () => dispatch({ type: 'DECREASE' })
+    pushTransaction,
+    setPopup,
+    setBalanceAmount,
+    increaseSendAmount,
+    decreaseSendAmount
   }
 }
 
