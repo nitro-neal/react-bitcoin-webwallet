@@ -1,16 +1,24 @@
 import Fingerprint2 from 'fingerprintjs2'
 import SockJS from 'sockjs-client'
 import Stomp from 'stompjs'
-import { pushTransaction, setPopup, setBalanceAmount } from './index'
+import { pushTransaction, setBalanceAmount, setReceiveAddress, setFingerprint } from './index'
+
+import QrCode from 'qrcode-generator'
+
+var qrSize = 4;
+var typeNumber = 4;
+var errorCorrectionLevel = 'L';
+var qr = QrCode(typeNumber, errorCorrectionLevel);
+
+
 
 var fp;
-// var that;
 
 var urlprefix = "http://104.196.50.29:8080/";
 //var urlprefix = "http://localhost:8080/";
 
-export default function createFingerprint(appContext) {
-    // that = appContext;
+export default function createFingerprint() {
+
     if (window.requestIdleCallback) {
         requestIdleCallback(function () {
             Fingerprint2.get(function (components) {
@@ -19,17 +27,19 @@ export default function createFingerprint(appContext) {
                 var murmur = Fingerprint2.x64hash128(values.join(''), 31);
                 console.log(murmur);
                 fp = murmur;
+                // fp = ("" + Math.random()).replace(".","");
                 register([{ route: '/topic/updateWallet-' + fp, callback: walletUpdate }]);
             })
         })
     } else {
         setTimeout(function () {
             Fingerprint2.get(function (components) {
-                console.log(components) // an array of components: {key: ..., value: ...}
+                console.log(components)
                 var values = components.map(function (component) { return component.value })
                 var murmur = Fingerprint2.x64hash128(values.join(''), 31)
-                console.log(murmur) // an array of components: {key: ..., value: ...}
+                console.log(murmur)
                 fp = murmur;
+                // fp = ("" + Math.random()).replace(".","");
                 register([{ route: '/topic/updateWallet-' + fp, callback: walletUpdate }]);
             })
         }, 500)
@@ -37,7 +47,6 @@ export default function createFingerprint(appContext) {
 }
 
 function register(registrations) {
-    //const socket = SockJS('/webwallet');
     const socket = SockJS(urlprefix + 'webwallet')
     const stompClient = Stomp.over(socket);
 
@@ -50,7 +59,6 @@ function register(registrations) {
 }
 
 function stompClientReady() {
-    //alert('ready! lets init the wallet..')
     initWallet(fp)
 }
 
@@ -70,25 +78,39 @@ function initWallet(fingerprint) {
     });
 }
 
+var firstTime = true;
+
 function walletUpdate(payload) {
-    //alert('wallet update called')
-    console.log("Payload:" + payload)
+    console.log("Wallet update with paylaod:" + payload)
     var payloadJson = JSON.parse(payload.body)
-
-    // TODO: Set state in wallet!
-    console.log("!! Wallet State:");
-    console.log("Receive Address" + payloadJson.receiveAddress + " balance " + payloadJson.balance + " transacitons: " + payloadJson.transactions)
-    // props.pushTransaction({ method: 'sent' })
-    //  props.setPopup(null)
-
-    pushTransaction({ method: 'sent' })
-    setPopup(null)
+    //console.log("Receive Address" + payloadJson.receiveAddress + " balance " + payloadJson.balance + " transacitons: " + payloadJson.transactions)
+    setFingerprint(fp)
     setBalanceAmount(payloadJson.balance)
+    setReceiveAddress(payloadJson.receiveAddress)
 
-    //that.props.balance(payloadJson.balance)
-    //that.props.walletUpdate
-    // TODO: Add qr code
-    // qr.addData(payloadJson.receiveAddress);
-    // qr.make();
-    // document.getElementById('qrPlaceholder').innerHTML = qr.createImgTag(qrSize, qrSize * 4);
+    if(firstTime) {
+        qr.addData(payloadJson.receiveAddress);
+        qr.make();
+        document.getElementById('qrPlaceholder').innerHTML = qr.createImgTag(qrSize, qrSize * 4);
+    }
+    
+    for(var i = 0, size = payloadJson.transactions.length; i < size ; i++){
+        var transaction = payloadJson.transactions[i];
+
+        pushTransaction({ 
+            method: transaction.transactionType,
+            amount: transaction.amount,
+            transactionId : transaction.transactionId,
+            timestamp: transaction.timestamp,
+            address: transaction.address,
+            qrcode: qr.createImgTag(qrSize, qrSize * 4)
+        })
+
+        if(!firstTime) {
+            break;
+        }
+    }
+
+    firstTime = false;
 }
+

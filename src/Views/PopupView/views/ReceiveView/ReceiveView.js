@@ -16,12 +16,23 @@ const ReceiveView = props => (
                 margin: '50px auto 0px'
             }}
             onClick={() => {
-                props.pushTransaction({ method: 'received' })
                 props.setPopup(null)
             }}
         >
-            RECEIVE
+            DONE
+            
         </Button>
+
+        <div style={{ textAlign: "center", margin:  '50px auto 0px'}} >
+            <h2>Receive Address:</h2>
+            <h1>{props.app.receiveAddress}</h1>
+            {/* TODO: ADD QR */}
+            {/* <div>{props.app.transactions[0].qrcode}</div> */}
+            {/* <span dangerouslySetInnerHTML={{__html: props.app.transactions[0]}} /> */}
+            <br></br>
+        </div>
+        
+        <div></div>
     </div>
 )
 

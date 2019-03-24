@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { SingleTransaction } from './components'
+import Moment from 'moment';
 import './Transactions.css'
+
 
 class Transactions extends Component {
     state = {
@@ -19,8 +21,8 @@ class Transactions extends Component {
                     props.app.transactions.length ?
                         <div>
                             <div className='transactionsDate'>
-                                Jan 22, 2018
-                        </div>
+                                {Moment(props.app.transactions[0].timestamp, "MMM-DD-YYYY").format('MMMM D')} 
+                            </div>
                             <div className='transactionsTable'>
                                 {
                                     props.app.transactions.map((transaction, i) => (

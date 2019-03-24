@@ -26,6 +26,7 @@ class Header extends Component {
                     Bitcoin Test
                 </div>
                 <div className='balance' style={styles.balance} >
+                {/* Maybe put a loader while balance is 0 and connecting to server https://bit.dev/davidhu2000/react-spinners/bounce-loader */}
                     {props.app.balanceAmount} BTCT
                 </div>
                 <div className='buttonsWrap'>
