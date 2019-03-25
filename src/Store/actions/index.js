@@ -18,6 +18,16 @@ export const setBalanceAmount = amount => store.dispatch({
     payload: amount
 })
 
+export const setReceiveAddress = address => store.dispatch({
+    type: 'UPDATE_RECEIVE_ADDRESS',
+    payload: address
+})
+
+export const setFingerprint = fingerprint => store.dispatch({
+    type: 'UPDATE_FINGERPRINT',
+    payload: fingerprint
+})
+
 export const increaseSendAmount = () => store.dispatch({ type: 'INCREASE' })
 
 export const decreaseSendAmount = () => store.dispatch({ type: 'DECREASE' })

@@ -14,8 +14,12 @@ export default function (state = initialState, action) {
             state.popupView = action.payload
             return { ...state }
         case 'UPDATE_BALANCE':
-            console.log("IN UPDATE BALANCE.." + action.payload)
             return { ...state, balanceAmount: action.payload }
+        case 'UPDATE_RECEIVE_ADDRESS':
+            return { ...state, receiveAddress: action.payload }
+        case 'UPDATE_FINGERPRINT':
+            console.log("IN UPDATE_FINGERPRINT .." + action.payload)
+            return { ...state, fingerprint: action.payload }
         default:
             return state
     }

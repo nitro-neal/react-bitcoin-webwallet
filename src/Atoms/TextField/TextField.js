@@ -21,6 +21,8 @@ class TextField extends Component {
 
     onChange(e) {
         this.setState({ value: e.target.value })
+        // TODO: I did not know how to acess the address. this.props.send.address was not working..
+        this.props.setSendAddress(e.target.value)
     }
 
     render() {
@@ -30,7 +32,8 @@ class TextField extends Component {
                 <input
                     type='text'
                     ref={this.input}
-                    value={this.state.value}
+                    // Warning: a component is changing an uncontrolled input of type text to be controlled
+                    // value={this.state.value}
                     onBlur={this.onBlur.bind(this)}
                     onFocus={this.onFocus.bind(this)}
                     onChange={this.onChange.bind(this)}
