@@ -40,7 +40,7 @@ class PopupView extends Component {
                 return <ProcessView {...this.props} />
             case 'confirmation':
                 return <ConfirmationView {...this.props} />
-            case 'sent':
+            case 'success':
                 return <SuccessView {...this.props} />
             default:
                 return <div></div>
