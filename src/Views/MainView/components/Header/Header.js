@@ -23,9 +23,11 @@ class Header extends Component {
         return (
             <header className={`Header ${this.state.className}`}>
                 <div className='category'>
-                    Bitcoin Test
+                    
+                    
                 </div>
                 <div className='balance' style={styles.balance} >
+                {/* Maybe put a loader while balance is 0 and connecting to server https://bit.dev/davidhu2000/react-spinners/bounce-loader */}
                     {props.app.balanceAmount} BTCT
                 </div>
                 <div className='buttonsWrap'>

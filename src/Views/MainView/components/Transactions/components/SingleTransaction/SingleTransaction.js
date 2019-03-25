@@ -14,7 +14,8 @@ class SingleTransaction extends Component {
     }
 
     render() {
-        const { method } = this.props.transaction
+        const { method, amount, transactionId, timestamp, address } = this.props.transaction
+
         return (
             <div
                 className={`SingleTransaction ${this.state.open ? 'open' : ''}`}
@@ -37,7 +38,7 @@ class SingleTransaction extends Component {
                         <span style={{
                             color: method === 'sent' ? 'inherit' : colors.primaryColor
                         }}>
-                            {this.props.amount || '-25.00'}
+                            {amount || '-25.00'}
                         </span>
                         <img
                             src={dropdownArrow}
@@ -55,7 +56,7 @@ class SingleTransaction extends Component {
                                     Date
                                 </div>
                                 <div className='detailValue date'>
-                                    31/03/2019 7:19 PM
+                                    {timestamp}
                                 </div>
                             </div>
                         </div>
@@ -69,7 +70,7 @@ class SingleTransaction extends Component {
                                 <div className='detailValue' style={{
                                     color: window.innerWidth < 800 ? colors.primaryColor : ''
                                 }}>
-                                    hx3bslkedfndsflbsdlj33j4asfgsdf…
+                                    {address}
                                 </div>
                             </div>
                         </div>
@@ -84,7 +85,7 @@ class SingleTransaction extends Component {
                                 <div className='detailValue' style={{
                                     color: window.innerWidth > 800 ? colors.primaryColor : ''
                                 }}>
-                                    hx3bslkedfndsflbsdlj33j4asfgsdf…
+                                    {transactionId}
                                 </div>
                             </div>
                         </div>

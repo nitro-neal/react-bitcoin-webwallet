@@ -3,6 +3,7 @@ import {
     ConfirmationView,
     SendView,
     ReceiveView,
+    InfoView,
     ProcessView,
     SuccessView
 } from './views'
@@ -36,6 +37,8 @@ class PopupView extends Component {
                 return <SendView  {...this.props} />
             case 'receive':
                 return <ReceiveView {...this.props} />
+            case 'info':
+                return <InfoView  {...this.props} />
             case 'sent':
                 return <ProcessView {...this.props} />
             case 'confirmation':

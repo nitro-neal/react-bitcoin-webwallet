@@ -7,6 +7,8 @@ import {
   pushTransaction,
   setPopup,
   setBalanceAmount,
+  setReceiveAddress,
+  setFingerprint,
   increaseSendAmount,
   decreaseSendAmount
 } from '../../Store/actions'
@@ -22,7 +24,7 @@ const styles = {
 
 class App extends Component {
   componentDidMount() {
-    createFingerprint(this)
+    createFingerprint()
   }
 
   render() {
@@ -47,6 +49,8 @@ function mapDispatchToProps() {
     pushTransaction,
     setPopup,
     setBalanceAmount,
+    setReceiveAddress,
+    setFingerprint,
     increaseSendAmount,
     decreaseSendAmount
   }

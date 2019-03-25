@@ -1,0 +1,11 @@
+.TopInfoView {
+    padding-top: 10px;
+    padding-left: 95%;
+}
+
+@media screen and (max-width: 800px) {
+    .TopInfoView {
+        padding-top: 10px;
+        padding-left: 95%;
+    }
+}
