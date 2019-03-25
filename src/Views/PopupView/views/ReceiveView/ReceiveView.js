@@ -1,10 +1,25 @@
 import React from 'react'
 import { Button } from '../../../../Atoms'
-import { Title, CloseButton } from '../../atoms'
+import { Title, CloseButton} from '../../atoms'
 import './ReceiveView.css'
 
+import QrCode from 'qrcode-generator'
+
+function renderQr(receiveAddress) {
+    if(receiveAddress) {
+        var qrSize = 4;
+        var typeNumber = 4;
+        var errorCorrectionLevel = 'L';
+        var qr = QrCode(typeNumber, errorCorrectionLevel);
+        qr.addData(receiveAddress);
+        qr.make();
+        return qr.createImgTag(qrSize, qrSize * 4);
+    }
+}
 const ReceiveView = props => (
+    
     <div className='ReceiveView'>
+        
         <CloseButton {...props} />
         <Title>
             RECEIVE
@@ -25,10 +40,8 @@ const ReceiveView = props => (
 
         <div style={{ textAlign: "center", margin:  '50px auto 0px'}} >
             <h2>Receive Address:</h2>
-            <h1>{props.app.receiveAddress}</h1>
-            {/* TODO: ADD QR */}
-            {/* <div>{props.app.transactions[0].qrcode}</div> */}
-            {/* <span dangerouslySetInnerHTML={{__html: props.app.transactions[0]}} /> */}
+            <h1>{props.app.receiveAddress}</h1> 
+            <span dangerouslySetInnerHTML={{__html: renderQr(props.app.receiveAddress)}} />
             <br></br>
         </div>
         

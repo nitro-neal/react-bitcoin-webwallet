@@ -38,9 +38,10 @@ class Transactions extends Component {
                         :
                         <div className='no-history'>
                             No History Transactions
-                    </div>
+                        </div>
                 }
-            </div>
+
+            </div>            
         )
     }
 }

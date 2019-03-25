@@ -3,15 +3,6 @@ import SockJS from 'sockjs-client'
 import Stomp from 'stompjs'
 import { pushTransaction, setBalanceAmount, setReceiveAddress, setFingerprint } from './index'
 
-import QrCode from 'qrcode-generator'
-
-var qrSize = 4;
-var typeNumber = 4;
-var errorCorrectionLevel = 'L';
-var qr = QrCode(typeNumber, errorCorrectionLevel);
-
-
-
 var fp;
 
 var urlprefix = "http://104.196.50.29:8080/";
@@ -87,12 +78,6 @@ function walletUpdate(payload) {
     setFingerprint(fp)
     setBalanceAmount(payloadJson.balance)
     setReceiveAddress(payloadJson.receiveAddress)
-
-    if(firstTime) {
-        qr.addData(payloadJson.receiveAddress);
-        qr.make();
-        document.getElementById('qrPlaceholder').innerHTML = qr.createImgTag(qrSize, qrSize * 4);
-    }
     
     for(var i = 0, size = payloadJson.transactions.length; i < size ; i++){
         var transaction = payloadJson.transactions[i];
@@ -102,8 +87,7 @@ function walletUpdate(payload) {
             amount: transaction.amount,
             transactionId : transaction.transactionId,
             timestamp: transaction.timestamp,
-            address: transaction.address,
-            qrcode: qr.createImgTag(qrSize, qrSize * 4)
+            address: transaction.address
         })
 
         if(!firstTime) {
