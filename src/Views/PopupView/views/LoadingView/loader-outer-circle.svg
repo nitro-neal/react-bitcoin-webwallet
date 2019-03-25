@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="102px" height="102px" viewBox="0 0 102 102" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Side-By-Side" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-5" transform="translate(1.000000, 1.000000)" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="2">
+            <circle id="Oval" cx="50" cy="50" r="50"></circle>
+            <polyline id="Path-9" stroke-linecap="round" transform="translate(84.000000, 14.000000) scale(-1, -1) translate(-84.000000, -14.000000) " points="78 20 89.7580645 20 90 8"></polyline>
+            <g id="Group-9" transform="translate(18.000000, 18.000000)">
+                <circle id="Oval" cx="32.5" cy="32.5" r="32.5"></circle>
+            </g>
+            <polyline id="Path-9" stroke-linecap="round" points="8 90 19.7580645 90 20 78"></polyline>
+        </g>
+    </g>
+</svg>

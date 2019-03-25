@@ -1,3 +1,17 @@
 .InfoView {
-    
+    text-align: center;
+}
+
+.InfoView .sub-title {
+    font-size: 18px;
+    font-weight: bold;
+    opacity: .5;
+}
+
+.InfoView .text-body-wrap {
+    padding-top: 15px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

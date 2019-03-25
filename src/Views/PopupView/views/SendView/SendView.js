@@ -2,54 +2,25 @@ import React from 'react'
 import { BitcoinField } from './components'
 import { Button, TextField } from '../../../../Atoms'
 import { Title, CloseButton } from '../../atoms'
+import { colors } from '../../../../Styles'
+import { setAddress } from '../../../../Store/actions'
 
 import './SendView.css'
 
-var theAddress = "-1"
-var urlprefix = "http://104.196.50.29:8080/";
-//var urlprefix = "http://localhost:8080/";
-
-function sendCoins(fp, amount){
-    var data = JSON.stringify({"amount": amount, "address": theAddress});
-
-    fetch(urlprefix + 'sendCoins', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'Fingerprint': fp
-        },
-        body: data,
-      }).then(function(response) {
-          console.log(response.status);
-      }, function(error) {
-          console.log(error.message);
-      });
-}
-
-
-
-function setSendAddress(address) {
-    theAddress = address
-}
-
 const SendView = props => (
-
     <div className='SendView'>
         <CloseButton {...props} />
         <div className='content'>
             <div className='TitleWrap'>
                 <Title>
                     SEND
-            </Title>
+                </Title>
             </div>
             <div className='fieldsWrap'>
-                {/* TOOD: Fix this setSendAddress fucntion pass hack! */}
-                <TextField {...props} setSendAddress={setSendAddress}/>
+                <TextField {...props} value={props.send.address} setSendAddress={setAddress} />
                 <BitcoinField {...props} />
 
                 {/* TODO: Mabye add before they hit send or something .. 'A .00001 transaction fee will be added to every transaction' */}
-
             </div>
 
             {/* TODO: Disable button if amount not enough coins, OR if invalid address format */}
@@ -61,8 +32,11 @@ const SendView = props => (
                     width: window.innerWidth > 800 ? 300 : 280
                 }}
                 onClick={() => {
-                    props.setPopup(null)
-                    sendCoins(props.app.fingerprint, props.send.amount)
+                    // TODO: Better validation and display error / disable button
+                    if (props.send.amount && props.send.address)
+                        props.setPopup('confirmation')
+                    else
+                        console.log('FAIL: ', props.send)
                 }}
             >
                 SEND

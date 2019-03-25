@@ -5,7 +5,8 @@ import {
     ReceiveView,
     InfoView,
     ProcessView,
-    SuccessView
+    SuccessView,
+    LoadingView
 } from './views'
 import { colors } from '../../Styles'
 import './PopupView.css'
@@ -43,8 +44,11 @@ class PopupView extends Component {
                 return <ProcessView {...this.props} />
             case 'confirmation':
                 return <ConfirmationView {...this.props} />
+            case 'loading':
+                return <LoadingView {...this.props} />
             case 'success':
                 return <SuccessView {...this.props} />
+
             default:
                 return <div></div>
         }

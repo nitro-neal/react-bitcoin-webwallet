@@ -11,10 +11,19 @@ export default function (state = initialState, action) {
         case 'ADDRESS_CHANGE':
             return { ...state, address: action.payload }
         case 'INCREASE':
-            return { ...state, amount: state.amount + changeSize }
+            const amount = Math.round((state.amount + changeSize) * 100000) / 100000
+            return {
+                ...state,
+                amount
+            }
         case 'DECREASE':
-            if (state.amount > changeSize)
-                return { ...state, amount: state.amount - changeSize }
+            if (state.amount > changeSize) {
+                const amount = Math.round((state.amount - changeSize) * 100000) / 100000
+                return {
+                    ...state,
+                    amount
+                }
+            }
             else
                 return { ...state }
         default:
