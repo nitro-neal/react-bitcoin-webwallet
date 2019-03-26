@@ -34,6 +34,11 @@ export const increaseSendAmount = () => store.dispatch({ type: 'INCREASE' })
 
 export const decreaseSendAmount = () => store.dispatch({ type: 'DECREASE' })
 
+export const setSendAmount = (value) => store.dispatch({
+    type: 'SET_SEND_AMOUNT',
+    payload: value
+})
+
 export const setAddress = address => store.dispatch({
     type: 'ADDRESS_CHANGE',
     payload: address

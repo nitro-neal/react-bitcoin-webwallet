@@ -37,8 +37,8 @@ const ConfirmationView = props => (
 
         <div className='buttonsWrap'>
             <Button
-                style={{ color: '#fff', borderColor: '#fff', opacity: .5 }}
                 onClick={() => props.setPopup('send')}
+                disabled
             >
                 BACK
             </Button>

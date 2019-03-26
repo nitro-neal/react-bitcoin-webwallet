@@ -38,6 +38,10 @@ const SendView = props => (
                     else
                         alert('Please fill up an amount and a valid address')
                 }}
+                disabled={
+                    props.send.amount <= 0 ||
+                    props.send.amount >= props.app.balanceAmount
+                }
             >
                 SEND
             </Button>

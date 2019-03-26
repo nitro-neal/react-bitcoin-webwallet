@@ -1,3 +1,31 @@
 .ReceiveView {
     
 }
+
+.ReceiveView .textWrap {
+    text-align: center;
+    font-size: 18px;
+}
+
+.ReceiveView .textWrap .addressTitle {
+    opacity: .5;
+    padding: 20px 0 5px;
+    font-weight: bold;
+}
+
+.ReceiveView .textWrap .address {
+    padding-bottom: 40px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 800px) {
+    .ReceiveView .textWrap {
+        text-align: center;
+        font-size: 16px;
+    }
+    
+    .ReceiveView .textWrap .address {
+        font-size: 13px;
+        padding-bottom: 20px;
+    }
+}

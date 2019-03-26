@@ -24,7 +24,7 @@ const InfoView = props => (
                 <img className='donateAddress' src={DonateAddress} alt="donate" />
             </div>
 
-            <div style={{
+            <div className='address' style={{
                 color: colors.primaryColor
             }}>
                 BTC: 1FahKfPv46hC6WE7ufPKfQWnknrtsQUYS1

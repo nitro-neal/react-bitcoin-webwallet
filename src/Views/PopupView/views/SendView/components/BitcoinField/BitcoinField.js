@@ -1,52 +1,50 @@
 import React, { Component } from 'react'
-import { increase, decrease } from '../../../../../../Assets'
+// import { increase, decrease } from '../../../../../../Assets'
 import { colors } from '../../../../../../Styles'
 import './BitcoinField.css'
 
 class BitcoinField extends Component {
 
-    state = {
-        focus: null,
-    }
-
     input = React.createRef()
 
-    onFocus() {
-        this.setState({ focus: true })
-    }
+    // onFocus() {
+    //     this.setState({ focus: true })
+    // }
 
-    onBlur() {
-        if (!this.state.value)
-            this.setState({ focus: false })
+    onBlur(e) {
+        const { value } = e.target
+        if (!value)
+            this.props.setSendAmount(0)
     }
 
     onChange(e) {
         const { value } = e.target
         if (!isNaN(value))
-            this.setState({
-                value: value
-            })
+            this.props.setSendAmount(value)
     }
 
     render() {
-        const { increaseSendAmount, decreaseSendAmount } = this.props
+        // const { increaseSendAmount, decreaseSendAmount } = this.props
         return (
-            <div className={`BitcoinField ${this.state.focus ? 'focused' : ''}`} style={{ color: colors.primaryColor }}>
-                <div className='decrease' onClick={decreaseSendAmount}>
+            <div className={`BitcoinField`} style={{ color: colors.primaryColor }}>
+                {/* <div className='decrease' onClick={decreaseSendAmount}>
                     <img src={decrease} alt='' />
-                </div>
+                </div> */}
                 <div className='textWrap'>
                     <div className='amount'>
-                        {/* TODO: This needs to be a TextField */}
-                        {this.props.send.amount}
+                        <input
+                            value={this.props.send.amount}
+                            onChange={this.onChange.bind(this)}
+                            onBlur={this.onBlur.bind(this)}
+                        />
                     </div>
                     <div className='coin'>
                         BTCT
                     </div>
                 </div>
-                <div className='increase' onClick={increaseSendAmount}>
+                {/* <div className='increase' onClick={increaseSendAmount}>
                     <img src={increase} alt='' />
-                </div>
+                </div> */}
             </div>
         )
     }

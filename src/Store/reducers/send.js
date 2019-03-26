@@ -26,6 +26,8 @@ export default function (state = initialState, action) {
             }
             else
                 return { ...state }
+        case 'SET_SEND_AMOUNT':
+            return { ...state, amount: action.payload }
         default:
             return state
     }

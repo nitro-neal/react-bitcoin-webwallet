@@ -1,12 +1,13 @@
 import React from 'react'
 import { Button } from '../../../../Atoms'
-import { Title, CloseButton} from '../../atoms'
+import { Title, CloseButton } from '../../atoms'
+import { colors } from '../../../../Styles'
 import './ReceiveView.css'
 
 import QrCode from 'qrcode-generator'
 
 function renderQr(receiveAddress) {
-    if(receiveAddress) {
+    if (receiveAddress) {
         var qrSize = 4;
         var typeNumber = 4;
         var errorCorrectionLevel = 'L';
@@ -17,35 +18,37 @@ function renderQr(receiveAddress) {
     }
 }
 const ReceiveView = props => (
-    
+
     <div className='ReceiveView'>
-        
+
         <CloseButton {...props} />
         <Title>
             RECEIVE
         </Title>
 
+
+
+        <div className='textWrap'>
+            <div className='addressTitle'>Address:</div>
+            <div style={{ color: colors.primaryColor }} className='address'>{props.app.receiveAddress}</div>
+            <span dangerouslySetInnerHTML={{ __html: renderQr(props.app.receiveAddress) }} />
+            <br></br>
+        </div>
+
+
         <Button
             style={{
                 display: 'block',
-                margin: '50px auto 0px'
+                margin: window.innerWidth < 800 ? 20 : '50px auto 0px',
+                width: window.innerWidth < 800 ? 'calc(100% - 40px)': '100%'
             }}
             onClick={() => {
                 props.setPopup(null)
             }}
         >
             DONE
-            
-        </Button>
 
-        <div style={{ textAlign: "center", margin:  '50px auto 0px'}} >
-            <h2>Receive Address:</h2>
-            <h1>{props.app.receiveAddress}</h1> 
-            <span dangerouslySetInnerHTML={{__html: renderQr(props.app.receiveAddress)}} />
-            <br></br>
-        </div>
-        
-        <div></div>
+        </Button>
     </div>
 )
 

@@ -31,4 +31,8 @@
     .InfoView .Title {
         letter-spacing: 0px;
     }
+
+    .InfoView .address {
+        font-size: 14px;
+    }
 }
