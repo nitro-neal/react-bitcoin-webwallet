@@ -40,12 +40,10 @@ class PopupView extends Component {
                 return <ReceiveView {...this.props} />
             case 'info':
                 return <InfoView  {...this.props} />
-            case 'sent':
-                return <ProcessView {...this.props} />
-            case 'confirmation':
-                return <ConfirmationView {...this.props} />
             case 'loading':
                 return <LoadingView {...this.props} />
+            case 'confirmation':
+                return <ConfirmationView {...this.props} />
             case 'success':
                 return <SuccessView {...this.props} />
 

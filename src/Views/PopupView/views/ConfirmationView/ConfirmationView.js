@@ -50,6 +50,7 @@ const ConfirmationView = props => (
                     if (response) {
                         console.log(response)
                         props.setPopup('success')
+                        setTimeout(() => props.setPopup(null), 2000)
                     }
                     else
                         console.error(response)

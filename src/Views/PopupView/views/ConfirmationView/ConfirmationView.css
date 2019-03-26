@@ -53,3 +53,36 @@
     width: calc(50% - 10px);
     min-width: unset;
 }
+
+@media screen and (max-width: 800px) {
+    .ConfirmationView .valuesWrap .row {
+        flex-direction: column;
+    }
+
+    .ConfirmationView .valuesWrap .row .key {
+        justify-content: flex-start;
+    }
+
+    .ConfirmationView .valuesWrap .row .value {
+        padding-left: 0px;
+    }
+
+    .ConfirmationView .valuesWrap {
+        font-size: 18px;
+        padding: 10px 20px 20px;
+    }
+
+    .ConfirmationView .Title {
+        letter-spacing: 0px;
+    }
+
+    .ConfirmationView .buttonsWrap {
+        flex-direction: column-reverse;
+        min-height: 110px;
+        padding: 0px 20px;
+    }
+
+    .ConfirmationView .buttonsWrap .Button {
+        width: 100%;
+    }
+}

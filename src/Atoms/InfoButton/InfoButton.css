@@ -37,5 +37,7 @@
         min-width: 30px;
         letter-spacing: 3px;
         max-width: 30px;
+        display: flex;
+        justify-content: center;
     }
 }

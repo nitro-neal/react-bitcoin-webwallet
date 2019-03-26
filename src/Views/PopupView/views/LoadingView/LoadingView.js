@@ -6,7 +6,7 @@ import './LoadingView.css'
 
 const LoadingView = props => (
     <div className='LoadingView'>
-        <div className='logoWrap'>
+        <div className='logoWrap icon'>
             <img className='circle' src={loaderOuterCircle} alt='' />
             <img className='bitcoin' src={loaderInnerB} alt='' />
         </div>

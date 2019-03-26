@@ -3,7 +3,7 @@ import { colors } from '../../../../Styles'
 import { Button } from '../../../../Atoms'
 import { Title, CloseButton } from '../../atoms'
 import './InfoView.css'
-import DonateAddress from '../../../../Assets/donate.png';
+import DonateAddress from '../../../../Assets/donate.png'
 
 const InfoView = props => (
     <div className='InfoView'>
@@ -21,7 +21,7 @@ const InfoView = props => (
                 No passwords, No login, No extra steps.
         </div>
             <div>
-                <img src={DonateAddress} alt="donate" />
+                <img className='donateAddress' src={DonateAddress} alt="donate" />
             </div>
 
             <div style={{
@@ -37,7 +37,7 @@ const InfoView = props => (
         <Button
             style={{
                 display: 'block',
-                margin: '40px auto 0px',
+                margin: '0px auto 0px',
                 maxWidth: 300,
                 height: 50,
             }}

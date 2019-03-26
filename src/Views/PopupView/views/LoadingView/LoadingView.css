@@ -47,3 +47,14 @@
     font-weight: 700;
     text-align: center;
 }
+
+@media screen and (max-width: 800px) {
+    .LoadingView .textWrap {
+        font-size: 18px;
+    }
+
+    .LoadingView .icon {
+        transform: scale(.8);
+    }
+    
+}

@@ -36,7 +36,7 @@ const SendView = props => (
                     if (props.send.amount && props.send.address)
                         props.setPopup('confirmation')
                     else
-                        console.log('FAIL: ', props.send)
+                        alert('Please fill up an amount and a valid address')
                 }}
             >
                 SEND
