@@ -35,12 +35,27 @@
 
 .BitcoinField .textWrap {
     display: flex;
+    width: 100%;
 }
 
 .BitcoinField .amount,
 .BitcoinField .coin {
     font-size: 25px;
     padding: 0 7.5px;
+}
+
+.BitcoinField .amount {
+    width: calc(50% - 15px);
+}
+
+.BitcoinField .amount input {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: inherit;
+    text-align: right;
+    width: 100%;
+    font-size: 25px;
 }
 
 @media screen and (max-width: 800px) {

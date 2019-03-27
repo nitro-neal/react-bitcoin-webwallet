@@ -67,7 +67,9 @@
   width: 180px;
   opacity: 0.1;
   left: 32%;
-  top: 390px; }
+  top: 390px; 
+  display: none;
+}
 .squares.square6 {
   -webkit-animation: move-left-right 9s infinite;
   animation: move-left-right 9s infinite;
@@ -75,7 +77,7 @@
   top: 282px;
   height: 100px;
   width: 100px;
-  opacity: 0.8; }
+  opacity: 0.1; }
 .squares.square7 {
   -webkit-animation: move-left-right 3s infinite;
   animation: move-left-right 3s infinite;

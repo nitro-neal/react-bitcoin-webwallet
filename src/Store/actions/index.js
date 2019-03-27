@@ -1,7 +1,9 @@
 import createFingerprint from './createFingerprint'
+import sendCoins from './sendCoins'
 import store from '../index'
 
 export { createFingerprint }
+export { sendCoins }
 
 export const pushTransaction = transaction => store.dispatch({
     type: 'PUSH_TRANSACTION',
@@ -31,3 +33,13 @@ export const setFingerprint = fingerprint => store.dispatch({
 export const increaseSendAmount = () => store.dispatch({ type: 'INCREASE' })
 
 export const decreaseSendAmount = () => store.dispatch({ type: 'DECREASE' })
+
+export const setSendAmount = (value) => store.dispatch({
+    type: 'SET_SEND_AMOUNT',
+    payload: value
+})
+
+export const setAddress = address => store.dispatch({
+    type: 'ADDRESS_CHANGE',
+    payload: address
+})

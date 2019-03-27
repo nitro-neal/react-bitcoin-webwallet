@@ -10,7 +10,8 @@ import {
   setReceiveAddress,
   setFingerprint,
   increaseSendAmount,
-  decreaseSendAmount
+  decreaseSendAmount,
+  setSendAmount
 } from '../../Store/actions'
 import { colors } from '../../Styles'
 import './App.css'
@@ -52,7 +53,8 @@ function mapDispatchToProps() {
     setReceiveAddress,
     setFingerprint,
     increaseSendAmount,
-    decreaseSendAmount
+    decreaseSendAmount,
+    setSendAmount
   }
 }
 

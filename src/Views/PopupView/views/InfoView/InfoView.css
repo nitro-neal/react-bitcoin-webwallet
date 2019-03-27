@@ -1,3 +1,38 @@
 .InfoView {
-    
+    text-align: center;
+}
+
+.InfoView .sub-title {
+    font-size: 18px;
+    font-weight: bold;
+    opacity: .5;
+}
+
+.InfoView .text-body-wrap {
+    padding: 15px 0 40px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width: 800px) {
+    .InfoView .donateAddress {
+        height: 100px;
+        width: 100px;
+    }   
+        
+    .InfoView .text-body-wrap {
+        padding: 20px 10px;
+        height: 270px;
+    }
+
+    .InfoView .Title {
+        letter-spacing: 0px;
+    }
+
+    .InfoView .address {
+        font-size: 14px;
+    }
 }
