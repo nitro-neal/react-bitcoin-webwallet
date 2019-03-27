@@ -46,7 +46,7 @@ const ConfirmationView = props => (
                 onClick={async () => {
                     props.setPopup('loading')
 
-                    const response = await sendCoins(props.app.fingerprint, props.send.amount)
+                    const response = await sendCoins(props.app.fingerprint, props.send.amount, props.send.address)
                     if (response) {
                         console.log(response)
                         props.setPopup('success')

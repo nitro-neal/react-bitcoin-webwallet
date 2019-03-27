@@ -30,7 +30,7 @@ const InfoView = props => (
                 BTC: 1FahKfPv46hC6WE7ufPKfQWnknrtsQUYS1
         </div>
 
-            <div>Contribute to help us continue to improve the crypto ecosystem</div>
+            <div>Would you like to help us continue to improve the crypto ecosystem? Consider donating!</div>
         </div>
 
 
